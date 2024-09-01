@@ -1,0 +1,46 @@
+1. public static <T extends Comparable<? super T>> void sort(List<T> list)
+
+
+This method is used to sort a list of items. Type 'T' has to implement the interface 'Comparable', which enables the
+method to sort the items based on the natural order of the items. As for the wildcard, '<? super T>' allows the method
+to accept and perform the operations on the objects of the type T or the objects of its superclass.
+
+
+2.  public static <T> void sort(List<T> list, Comparator<? super T> c)
+
+
+This method is designed to sort a List of elements of any type 'T' using a custom comparator. here we can
+use the 'Comparator' with a custom logic used for comparing and with the parameter 'c'. This is
+particularly useful when you want a specific sorting order that isn't the normal one.
+
+
+
+3.  public static <T> int binarySearch(List<? extends Comparable<? super T>> list, T key)
+
+
+This method is used to find a specific item within a sorted list quickly. It employs
+the binary search algorithm, which is more efficient for large lists compared to a linear
+search. The `<? extends Comparable<? super T>>` part makes sure that the list can
+contain elements of type `T` or its subclasses that implement the `Comparable`
+interface. This is handy when you need to efficiently find an item in a large, sorted
+dataset.
+
+
+4.  public static void shuffle(List<?> list)
+
+
+This method randomly shuffles the elements within a list. The wildcard `?` denotes that the list can hold elements
+of any type. It's useful when you want to rearrange the items in a random order, akin to shuffling a deck
+of cards before a card game.
+
+
+5.  public static <T> void copy(List<? super T> dest, List<? extends T> src)
+
+
+This method copies elements from one list to another. The `<? super T>` wildcard allows the
+destination list to accept elements of type `T` or its superclass, ensuring that the copy
+operation is feasible even if the destination list has broader type restrictions. The `<?extends T>`
+wildcard in the source list only accepts elements of type `T` or its subclasses,
+allowing for copying elements from a more specific type list to a more
+general one.
+
