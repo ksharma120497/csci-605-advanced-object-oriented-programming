@@ -26,8 +26,7 @@ public class Solution {
     }
 
     public static int getMex(List<Integer> arr){
-
-        return arr;
+        return arr.get(0);
     }
 
     public static void main(String[] args) {
